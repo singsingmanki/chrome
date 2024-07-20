@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>News</title>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="min-w-[600px] min-h-[600px]">
+  <div
+    class="min-h-dvh bg-[url('https://media11.s-nbcnews.com/i/mpx/2704722219/2024_04/NN04T_NIGHTLY-NEWS-REASONS-TO-WATCH.mp4.00_00_14_26.Still001-v6gy8x.jpg')] backdrop-brightness-200 bg-cover bg-no-repeat bg-fixed">
+    <div class="transition ease-in duration-300 min-h-[600px] backdrop-brightness-120 overflow-auto"
+      id="backdropBackground">
+      <!-- lightbtn -->
+      <button id="lightModeBtn" class="hidden">
+        <svg class="w-7 h-7 text-gray-400 absolute right-5 hover:text-orange-500" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M5 12H3m18 0h-2M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+        </svg>
+      </button>
+      <!-- darkbtn -->
+      <button id="darkModeBtn" class="">
+        <svg class="w-7 h-7 text-gray-100 absolute right-5 hover:text-yellow-300" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z" />
+        </svg>
+      </button>
+      <!-- Search Bar & Advanced Search -->
+      <div>
+        <form id="form" class="max-w-lg mx-auto pt-14">
+          <div class="flex">
+            <label for="search-dropdown"
+              class="transition-colors ease-in duration-300 mb-2 text-sm font-medium text-gray-900 sr-only"
+              id="searchLabel">Search</label>
+            <button id="dropdown-button" data-dropdown-toggle="dropdown"
+              class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
+              type="button">
+              Top Stories<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <div id="dropdown"
+              class="transition-colors ease-in duration-300 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+              <ul class="transition-colors ease-in duration-300 py-2 text-sm text-gray-700" id="selectUl"
+                aria-labelledby="dropdown-button">
+                <li>
+                  <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="top-stories">
+                    Top Stories
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="keywords">
+                    Keywords
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="categories">
+                    Categories
+                  </button>
+                </li>
+           
+              </ul>
+            </div>
+            <div class="relative w-full">
+              <!-- Keywords -->
+              <input type="search" id="search-dropdown"
+                class="block p-2.5 w-full z-20 text-sm text-gray-500 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search keywords" required />
+              <!-- Category -->
+              <button id="dropdown-button-cat" data-dropdown-toggle="dropdown-cat"
+                class="flex-shrink-0 inline-flex items-center justify-between block p-2.5 w-[386.75px] rounded-r-lg z-20 text-sm text-gray-900 bg-gray-50 border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                type="button">Select a category<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+              <div id="dropdown-cat" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdown-button-cat" id="catUl">
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="business">
+                      Business
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="politics">
+                      Politics
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="sports">
+                      Sports
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="science">
+                      Science
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="technology">
+                      Technology
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="fashion">
+                      Fashion
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="food">
+                      Food
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="health">
+                      Health
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="us">
+                      US
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100" id="world">
+                      World
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <!-- Country -->
+            
+              <button type="button" id="submitBtn"
+                class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-600 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+                <span class="sr-only">Search</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Div boxes for news items  -->
+      <div id="newsItems">
+
+      </div>
+    </div>
+  </div>
+  <script type="module" src="script.js"></script>
+  <script src="./tailwind.js"></script>
+ 
+
+</body>
+
+</html>
